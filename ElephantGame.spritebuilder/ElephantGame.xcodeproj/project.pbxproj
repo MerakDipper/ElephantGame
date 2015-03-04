@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		391256B91A9B049400EFBB5C /* Feather.m in Sources */ = {isa = PBXBuildFile; fileRef = 391256B81A9B049400EFBB5C /* Feather.m */; };
+		39A0BA691AA68D110064E922 /* Elephant.m in Sources */ = {isa = PBXBuildFile; fileRef = 39A0BA681AA68D110064E922 /* Elephant.m */; };
 		5B12100C19748281004C1E1D /* BridgeKitV3.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B12100B19748281004C1E1D /* BridgeKitV3.framework */; };
 		5B121029197484DA004C1E1D /* BridgeKitV3.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B12100B19748281004C1E1D /* BridgeKitV3.framework */; };
 		5B12102A197484DD004C1E1D /* ElephantGameActivity.java in Sources */ = {isa = PBXBuildFile; fileRef = 5B12101B19748413004C1E1D /* ElephantGameActivity.java */; };
@@ -172,6 +173,8 @@
 /* Begin PBXFileReference section */
 		391256B71A9B049400EFBB5C /* Feather.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Feather.h; path = Source/Feather.h; sourceTree = "<group>"; };
 		391256B81A9B049400EFBB5C /* Feather.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Feather.m; path = Source/Feather.m; sourceTree = "<group>"; };
+		39A0BA671AA68D110064E922 /* Elephant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Elephant.h; sourceTree = "<group>"; };
+		39A0BA681AA68D110064E922 /* Elephant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Elephant.m; sourceTree = "<group>"; };
 		5B12100919748273004C1E1D /* libEGL.so */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libEGL.so; path = /usr/lib/armv7a/libEGL.so; sourceTree = SDKROOT; };
 		5B12100B19748281004C1E1D /* BridgeKitV3.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BridgeKitV3.framework; path = System/Library/Frameworks/BridgeKitV3.framework; sourceTree = SDKROOT; };
 		5B12100F197483EE004C1E1D /* ic_launcher.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_launcher.png; sourceTree = "<group>"; };
@@ -499,6 +502,8 @@
 			children = (
 				391256B71A9B049400EFBB5C /* Feather.h */,
 				391256B81A9B049400EFBB5C /* Feather.m */,
+				39A0BA671AA68D110064E922 /* Elephant.h */,
+				39A0BA681AA68D110064E922 /* Elephant.m */,
 				B737893C1807616C0076A88C /* Source */,
 				B77F1B4617B978D7009739AE /* Resources */,
 				9222E2B918734FF800A246C7 /* libs */,
@@ -875,6 +880,7 @@
 				7A046D8C19E8A20E004C4763 /* MainScene.m in Sources */,
 				E887AFC91A1CB11E0075CBAD /* Level.m in Sources */,
 				391256B91A9B049400EFBB5C /* Feather.m in Sources */,
+				39A0BA691AA68D110064E922 /* Elephant.m in Sources */,
 				5B121038197487F2004C1E1D /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -12,6 +12,7 @@
 {
     CCPhysicsNode* _physicsNode;
     CCNode* _launcher;
+    CCNode* _launcher1;
 }
 
 @end

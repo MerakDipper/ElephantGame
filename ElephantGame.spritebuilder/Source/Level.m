@@ -8,18 +8,22 @@
 
 #import "Level.h"
 #import "Feather.h"
+//#import "Elephant.h"
 
 @implementation Level {
     CCNode* feather;
     CCNode* ground;
     CCButton *restartButton;
+    CCButton *winButton;
     CCNode* peanut;
     CCButton *touchEle;
     BOOL _gameOver;
     CCAction *followFeather;
     CCNode *contentNode;
     CCNode *elephant;
-    CCPhysicsJoint *springLink;
+    //CCPhysicsJoint *springLink;
+    CCButton *moveButton;
+    
 
 }
 
@@ -35,9 +39,10 @@
 
 - (void)didLoadFromCCB {
     feather = (Feather*)[CCBReader load:@"Feather"];
+    //elephant = (Elephant*)[CCBReader load:@"Elephant"];
     _physicsNode.collisionDelegate =self;
     [_physicsNode addChild:feather];
-    springLink = [CCPhysicsJoint connectedSpringJointWithBodyA:feather.physicsBody bodyB:elephant.physicsBody anchorA:ccp(0, 0) anchorB:ccp(30, 30) restLength:150.f stiffness:500.f damping:40.f];
+    //springLink = [CCPhysicsJoint connectedSpringJointWithBodyA:feather.physicsBody bodyB:elephant.physicsBody anchorA:ccp(0, 0) anchorB:ccp(30, 30) restLength:150.f stiffness:500.f damping:40.f];
     
 }
 
@@ -53,7 +58,9 @@
         // Load peanut and set it's initial position
         peanut = [CCBReader load:@"Peanut"];
         
+    
         CGPoint spawnPosition = _launcher.position;
+        //CGPoint spawnPosition = _launcher1.position;
         spawnPosition.x = spawnPosition.x+25;
         spawnPosition.y = spawnPosition.y-15;
         peanut.position = ccpAdd(spawnPosition, peanutOffset);
@@ -83,13 +90,38 @@
     restartButton.visible = TRUE;
     [contentNode stopAction:followFeather];
     [_launcher stopAllActions];
+    [feather stopAllActions];
+    [elephant stopAllActions];
+    touchEle.enabled = FALSE;
     CCActionMoveTo *actionMoveTo = [CCActionMoveTo actionWithDuration:1.f position:ccp(0,0)];
     [contentNode runAction:actionMoveTo];
+    feather.physicsBody = nil;
+
+    //[[CCDirector sharedDirector] pause];
 }
+
+- (void)gameWin {
+    _gameOver = TRUE;
+    winButton.visible = TRUE;
+    feather.physicsBody = nil;
+    //[[CCDirector sharedDirector] pause];
+}
+    
 
 - (void)restart {
     CCScene *scene = [CCBReader loadAsScene:@"Level"];
     [[CCDirector sharedDirector] replaceScene:scene];
+}
+
+-(void)moveElephantForward {
+    NSLog(@"touched ground2");
+    CCActionMoveBy* moveForward = [CCActionMoveBy actionWithDuration:0.3f position:ccp(50.0f, 0.0f)];
+    [elephant runAction:moveForward];
+}
+
+-(void)move {
+    [self moveElephantForward];
+    NSLog(@"touched ground1");
 }
 
 - (void)update:(CCTime)delta {
@@ -97,7 +129,7 @@
         (feather.position.y-self.boundingBox.origin.y > self.boundingBox.size.height))
     {
         //NSLog(@"Update:%g, %g",feather.position.x,self.boundingBox.size.width);
-        [self gameOver];
+        [self gameWin];
         return;
     }
 //    if(!_gameOver) {
