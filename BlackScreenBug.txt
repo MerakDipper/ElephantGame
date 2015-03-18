@@ -1,0 +1,7 @@
+Touch left side of the screen to blow the feather, touch right side of the screen to move elephant forward. For now if the feather is blowing to right boundary of the screen you win the game, and if it falls onto the ground you lose.
+
+I have encountered a strange problem that my simulator would gone black. I only moved my button out of some content node and my game would go black. And I have no idea what is going one because nothing unusual happened in console. 
+
+Here is the situation. When the feather goes out of screen or fall onto ground the game is over and restart button show. But somehow now when the feather pass the middle of the screen (as I observed by my eye), the screen would go black and after a while the restart button will show (I guess it is because the feather falls onto ground then). 
+
+So could you suggest a hint why this might happen? Because I have no idea what would make a game go black in simulation mode. Thank you in advance!

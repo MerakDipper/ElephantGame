@@ -32,6 +32,7 @@
     [super onEnter];
     restartButton.visible = FALSE;
     feather.physicsBody.collisionType = @"feather";
+    peanut.physicsBody.collisionType=@"peanutc";
     ground.physicsBody.collisionType = @"ground";
     
 }
@@ -83,6 +84,14 @@
     [self gameOver];
     return TRUE;
 }
+-(BOOL)ccPhysicsCollisionBegin:(CCPhysicsCollisionPair*)pair peanutc:(CCNode*)peanut wildcard:(CCNode*)nodeB {
+    NSLog(@"CollisionBullet");
+    peanut.physicsBody=nil;
+    return TRUE;
+}
+
+
+
 
 - (void)gameOver {
     
