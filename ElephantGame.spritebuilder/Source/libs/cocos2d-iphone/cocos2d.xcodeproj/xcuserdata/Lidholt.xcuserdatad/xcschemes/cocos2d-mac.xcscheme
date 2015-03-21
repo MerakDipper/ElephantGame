@@ -17,7 +17,7 @@
                BlueprintIdentifier = "7A4037A719E37038007B6E8F"
                BuildableName = "libcocos2d-mac.a"
                BlueprintName = "cocos2d-mac"
-               ReferencedContainer = "container:../../../Support/PROJECTNAME.spritebuilder/Source/libs/cocos2d-iphone/cocos2d.xcodeproj">
+               ReferencedContainer = "container:cocos2d.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -45,7 +45,7 @@
             BlueprintIdentifier = "7A4037A719E37038007B6E8F"
             BuildableName = "libcocos2d-mac.a"
             BlueprintName = "cocos2d-mac"
-            ReferencedContainer = "container:../../../Support/PROJECTNAME.spritebuilder/Source/libs/cocos2d-iphone/cocos2d.xcodeproj">
+            ReferencedContainer = "container:cocos2d.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -63,7 +63,7 @@
             BlueprintIdentifier = "7A4037A719E37038007B6E8F"
             BuildableName = "libcocos2d-mac.a"
             BlueprintName = "cocos2d-mac"
-            ReferencedContainer = "container:../../../Support/PROJECTNAME.spritebuilder/Source/libs/cocos2d-iphone/cocos2d.xcodeproj">
+            ReferencedContainer = "container:cocos2d.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </ProfileAction>

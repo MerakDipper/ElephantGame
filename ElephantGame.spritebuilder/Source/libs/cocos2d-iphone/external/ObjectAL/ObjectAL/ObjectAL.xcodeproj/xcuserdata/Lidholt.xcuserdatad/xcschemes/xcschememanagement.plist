@@ -12,12 +12,12 @@
 		<key>ObjectAL (Android).xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>55</integer>
+			<integer>45</integer>
 		</dict>
 		<key>ObjectAL (Mac).xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>56</integer>
+			<integer>46</integer>
 		</dict>
 		<key>ObjectAL (OSX).xcscheme_^#shared#^_</key>
 		<dict>

@@ -21,7 +21,6 @@
     CCAction *followFeather;
     CCNode *contentNode;
     CCNode *elephant;
-    //CCPhysicsJoint *springLink;
     CCButton *moveButton;
     
 
@@ -34,6 +33,8 @@
     feather.physicsBody.collisionType = @"feather";
     peanut.physicsBody.collisionType=@"peanutc";
     ground.physicsBody.collisionType = @"ground";
+    CCActionFollow *follow = [CCActionFollow actionWithTarget:feather worldBoundary:contentNode.boundingBox];
+    [self runAction:follow];
     
 }
 
@@ -74,8 +75,7 @@
         CGPoint force = ccpMult(directionVector, 18000);
         [peanut.physicsBody applyForce:force];
     
-    CCActionFollow *follow = [CCActionFollow actionWithTarget:feather worldBoundary:self.boundingBox];
-    [contentNode runAction:follow];
+    
     
     
 }
