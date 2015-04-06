@@ -1,0 +1,24 @@
+For Xin:
+Tasks finished this week:
+1) Created a level class to abstract each level and load the level information to the UI.
+2) Added the json parser to load json files to current Level object so that target color blocks in the grid can be passed to the game console dynamically.
+
+Task to be finish next week:
+1) Tune the RGB values of each color.
+2) Modify the function of checking the neighboring cells so that each cell can be clicked only once.
+3) Add a semi-transparent background to the back of current grid so that gamer can see the target color through the intervals between the color blocks in the front.
+
+For Xuan:
+This week
+1.Successfully make shoot and go button fixed to either sides of the screen
+2.Disabled physics for the “bullet” 
+3.Add a jump function to elephant.
+4.Blackscreen bug
+
+Next week
+1.Fix bug
+2.Explore more features, add obstacles and infinite the game to see how far the character can go
+
+or
+
+1.design levels and add obstacles

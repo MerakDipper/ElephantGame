@@ -1,0 +1,19 @@
+For Xin:
+Tasks finished this week:
+1) Tuned the RGB values of each color.
+2) Modified the function of checking the neighboring cells so that each cell can be clicked only once.
+3) Added a semi-transparent background to the back of current grid so that gamer can see the target color through the intervals between the color blocks in the front.
+
+Task to be finish next week:
+1) Finish the level design and add the judging of scores functionality to the end of each level.
+2) Finish at least 5 levels and finish the level passing functionality.
+
+For Xuan:
+This week
+1.Abandon the jump function because it is hard for the user to operate. 
+2.Fixed blackscreen bug
+3.Trying to figure out ways to play the game on computers (because it is just more convenient for phones).
+
+Next week
+1.Use the beta version simulator of make school to test the game.
+2.Add obstacles and levels
