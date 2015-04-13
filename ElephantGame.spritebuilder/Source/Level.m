@@ -11,7 +11,7 @@
 //#import "Elephant.h"
 
 @implementation Level {
-    CCNode* feather;
+    Feather* feather;
     CCNode* ground;
     CCButton *restartButton;
     CCButton *winButton;
@@ -22,7 +22,11 @@
     CCNode *contentNode;
     CCNode *elephant;
     CCButton *moveButton;
-    
+    CCNode *levelNode;
+    //CCScene *levels;
+    //CCSprite* star;
+    CCLabelTTF *_scoreLabel;
+    int _score;
 
 }
 
@@ -31,10 +35,14 @@
     [super onEnter];
     restartButton.visible = FALSE;
     feather.physicsBody.collisionType = @"feather";
-    peanut.physicsBody.collisionType=@"peanutc";
+    
     ground.physicsBody.collisionType = @"ground";
-    CCActionFollow *follow = [CCActionFollow actionWithTarget:feather worldBoundary:contentNode.boundingBox];
-    [self runAction:follow];
+    
+    //CGRect uiPointsBoundingBox = CGRectMake(0, 0, self.boundingBox.size.width, self.boundingBox.size.height);
+    //CCAction* followFeather = [CCActionFollow actionWithTarget:feather worldBoundary:contentNode.boundingBox];
+    CCLOG(@"contentnode size is %f %f", _physicsNode.boundingBox.size.height, _physicsNode.boundingBox.size.width);
+    followFeather = [CCActionFollow actionWithTarget:feather worldBoundary:_physicsNode.boundingBox];
+    [contentNode runAction:followFeather];
     
 }
 
@@ -45,6 +53,9 @@
     _physicsNode.collisionDelegate =self;
     [_physicsNode addChild:feather];
     //springLink = [CCPhysicsJoint connectedSpringJointWithBodyA:feather.physicsBody bodyB:elephant.physicsBody anchorA:ccp(0, 0) anchorB:ccp(30, 30) restLength:150.f stiffness:500.f damping:40.f];
+    CCScene *levels = [CCBReader loadAsScene:@"Levels/Level2"];
+    [levelNode addChild:levels];
+    
     
 }
 
@@ -59,12 +70,12 @@
     
         // Load peanut and set it's initial position
         peanut = [CCBReader load:@"Peanut"];
-        
+        peanut.physicsBody.collisionType=@"peanutc";
     
-        CGPoint spawnPosition = _launcher.position;
+        CGPoint spawnPosition = elephant.position;
         //CGPoint spawnPosition = _launcher1.position;
-        spawnPosition.x = spawnPosition.x+25;
-        spawnPosition.y = spawnPosition.y-15;
+        spawnPosition.x = spawnPosition.x+150;
+        spawnPosition.y = spawnPosition.y+100;
         peanut.position = ccpAdd(spawnPosition, peanutOffset);
         peanut.rotation = _launcher.rotation-50;
         peanut.scale = 0.5;
@@ -72,7 +83,7 @@
         [_physicsNode addChild:peanut];
         
         // Make and impulse and apply it
-        CGPoint force = ccpMult(directionVector, 18000);
+        CGPoint force = ccpMult(directionVector, 350000);
         [peanut.physicsBody applyForce:force];
     
     
@@ -84,11 +95,35 @@
     [self gameOver];
     return TRUE;
 }
--(BOOL)ccPhysicsCollisionBegin:(CCPhysicsCollisionPair*)pair peanutc:(CCNode*)peanut wildcard:(CCNode*)nodeB {
-    NSLog(@"CollisionBullet");
-    peanut.physicsBody=nil;
+
+-(BOOL)ccPhysicsCollisionBegin:(CCPhysicsCollisionPair*)pair feather:(CCSprite*)feather star:(CCSprite*)star {
+    CCLOG(@"star");
+    [star removeFromParent];
+    _score++;
+    _scoreLabel.string = [NSString stringWithFormat:@"%d", _score];
+    return NO;
+}
+
+-(BOOL)ccPhysicsCollisionBegin:(CCPhysicsCollisionPair*)pair peanutc:(CCNode*)peanut feather:(CCSprite*)feather {
+    CCLOG(@"CollisionBulletfeather");
+    //peanut.physicsBody=nil;
+    [peanut removeFromParent];
     return TRUE;
 }
+
+-(BOOL)ccPhysicsCollisionBegin:(CCPhysicsCollisionPair*)pair peanutc:(CCNode*)peanut ground:(CCNode*)ground {
+    CCLOG(@"CollisionBulletground");
+    //peanut.physicsBody=nil;
+    [peanut removeFromParent];
+    return TRUE;
+}
+
+
+-(BOOL)ccPhysicsCollisionBegin:(CCPhysicsCollisionPair*)pair peanutc:(CCNode*)peanut star:(CCSprite*)star {
+    CCLOG(@"peanutandstar");
+    return NO;
+}
+
 
 
 
@@ -97,7 +132,7 @@
     
     _gameOver = TRUE;
     restartButton.visible = TRUE;
-    [contentNode stopAction:followFeather];
+    //[contentNode stopAction:followFeather];
     [_launcher stopAllActions];
     [feather stopAllActions];
     [elephant stopAllActions];
@@ -134,8 +169,8 @@
 }
 
 - (void)update:(CCTime)delta {
-    if ((feather.position.x-self.boundingBox.origin.x > self.boundingBox.size.width) ||
-        (feather.position.y-self.boundingBox.origin.y > self.boundingBox.size.height))
+    if ((feather.position.x-self.boundingBox.origin.x > self.boundingBox.size.width)) //||
+        //(feather.position.y-self.boundingBox.origin.y > self.boundingBox.size.height))
     {
         //NSLog(@"Update:%g, %g",feather.position.x,self.boundingBox.size.width);
         [self gameWin];

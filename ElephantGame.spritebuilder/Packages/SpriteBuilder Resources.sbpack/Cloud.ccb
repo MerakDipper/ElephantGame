@@ -10,7 +10,7 @@
 		<false/>
 	</dict>
 	<key>UUID</key>
-	<integer>2</integer>
+	<integer>1</integer>
 	<key>centeredOrigin</key>
 	<false/>
 	<key>currentResolution</key>
@@ -54,7 +54,7 @@
 			<key>allowsRotation</key>
 			<true/>
 			<key>bodyShape</key>
-			<integer>1</integer>
+			<integer>0</integer>
 			<key>collisionCategories</key>
 			<array/>
 			<key>collisionMask</key>
@@ -62,24 +62,63 @@
 			<key>collisionType</key>
 			<string></string>
 			<key>cornerRadius</key>
-			<real>50.05078125</real>
+			<real>0.0</real>
 			<key>density</key>
-			<real>5</real>
+			<real>1</real>
 			<key>dynamic</key>
-			<true/>
+			<false/>
 			<key>elasticity</key>
-			<real>0.30000001192092896</real>
+			<real>0.5</real>
 			<key>friction</key>
-			<real>0.30000001192092896</real>
+			<real>1</real>
 			<key>points</key>
 			<array>
 				<array>
 					<real>0.0</real>
 					<real>0.0</real>
 				</array>
+				<array>
+					<real>31.984375</real>
+					<real>26.105484008789062</real>
+				</array>
+				<array>
+					<real>73.9765625</real>
+					<real>37.441421508789062</real>
+				</array>
+				<array>
+					<real>124.22265625</real>
+					<real>44.949234008789062</real>
+				</array>
+				<array>
+					<real>169.5078125</real>
+					<real>8.3359527587890625</real>
+				</array>
 			</array>
 			<key>polygons</key>
-			<array/>
+			<array>
+				<array>
+					<array>
+						<real>169.5078125</real>
+						<real>8.3359527587890625</real>
+					</array>
+					<array>
+						<real>124.22265625</real>
+						<real>44.949234008789062</real>
+					</array>
+					<array>
+						<real>73.9765625</real>
+						<real>37.441421508789062</real>
+					</array>
+					<array>
+						<real>31.984375</real>
+						<real>26.105484008789062</real>
+					</array>
+					<array>
+						<real>0.0</real>
+						<real>0.0</real>
+					</array>
+				</array>
+			</array>
 		</dict>
 		<key>properties</key>
 		<array>
@@ -137,7 +176,7 @@
 				<key>value</key>
 				<array>
 					<string></string>
-					<string></string>
+					<string>Sprites/Cloud-8@4x.png</string>
 				</array>
 			</dict>
 			<dict>

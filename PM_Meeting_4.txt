@@ -1,0 +1,24 @@
+For FlyingFeather Game
+
+This week
+Add stars and corresponding counting
+Add obstacles (cloud)
+Fixed the camera bug
+Add level2
+
+Next week
+More levels with other challenges
+Pretty MainScreen
+More interface functionality
+
+For Color Pouring Game
+
+This week
+Switched from continuous RGB values to thresholded 12 colors
+Designed Level 1, 2
+Added Accuracy calculation (for score calculation)
+
+Next week
+More levels (up to 5)
+Helper color panel for users to better understand how the color mixing works
+Add a frame to each cell showing the target color (instead of showing it on background with certain transparency)
