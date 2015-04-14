@@ -675,7 +675,7 @@
 									</dict>
 								</array>
 								<key>customClass</key>
-								<string>Level</string>
+								<string></string>
 								<key>displayName</key>
 								<string>CCNode</string>
 								<key>memberVarAssignmentName</key>
@@ -1089,7 +1089,7 @@
 					</dict>
 				</array>
 				<key>customClass</key>
-				<string>Level</string>
+				<string></string>
 				<key>displayName</key>
 				<string>CCNode</string>
 				<key>memberVarAssignmentName</key>
@@ -1116,8 +1116,8 @@
 							<real>0.0</real>
 							<real>0.0</real>
 							<integer>0</integer>
-							<integer>2</integer>
-							<integer>2</integer>
+							<integer>0</integer>
+							<integer>0</integer>
 						</array>
 					</dict>
 					<dict>

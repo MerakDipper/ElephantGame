@@ -38,10 +38,8 @@
     
     ground.physicsBody.collisionType = @"ground";
     
-    //CGRect uiPointsBoundingBox = CGRectMake(0, 0, self.boundingBox.size.width, self.boundingBox.size.height);
-    //CCAction* followFeather = [CCActionFollow actionWithTarget:feather worldBoundary:contentNode.boundingBox];
-    CCLOG(@"contentnode size is %f %f", _physicsNode.boundingBox.size.height, _physicsNode.boundingBox.size.width);
-    followFeather = [CCActionFollow actionWithTarget:feather worldBoundary:_physicsNode.boundingBox];
+    CGRect box = CGRectMake(0, 0, self.boundingBox.size.width, self.boundingBox.size.height);
+    followFeather = [CCActionFollow actionWithTarget:feather worldBoundary:box];
     [contentNode runAction:followFeather];
     
 }
@@ -53,7 +51,7 @@
     _physicsNode.collisionDelegate =self;
     [_physicsNode addChild:feather];
     //springLink = [CCPhysicsJoint connectedSpringJointWithBodyA:feather.physicsBody bodyB:elephant.physicsBody anchorA:ccp(0, 0) anchorB:ccp(30, 30) restLength:150.f stiffness:500.f damping:40.f];
-    CCScene *levels = [CCBReader loadAsScene:@"Levels/Level2"];
+    CCScene *levels = [CCBReader loadAsScene:@"Levels/Level1"];
     [levelNode addChild:levels];
     
     
