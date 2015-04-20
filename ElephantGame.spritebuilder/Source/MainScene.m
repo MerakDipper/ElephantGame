@@ -3,8 +3,9 @@
 @implementation MainScene
 
 - (void)play {
-    CCScene *gameplayScene = [CCBReader loadAsScene:@"Level"];
-    [[CCDirector sharedDirector]replaceScene:gameplayScene];
+    CCScene *firstLevel = [CCBReader loadAsScene:@"Level"];
+    CCTransition *transition = [CCTransition transitionFadeWithDuration:0.8f];
+    [[CCDirector sharedDirector] presentScene:firstLevel withTransition:transition];
 }
 
 @end

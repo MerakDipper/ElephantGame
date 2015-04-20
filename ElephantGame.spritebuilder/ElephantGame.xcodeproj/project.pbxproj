@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		391256B91A9B049400EFBB5C /* Feather.m in Sources */ = {isa = PBXBuildFile; fileRef = 391256B81A9B049400EFBB5C /* Feather.m */; };
 		39A0BA691AA68D110064E922 /* Elephant.m in Sources */ = {isa = PBXBuildFile; fileRef = 39A0BA681AA68D110064E922 /* Elephant.m */; };
+		39D749451AE59E46000ECB87 /* WinPopup.m in Sources */ = {isa = PBXBuildFile; fileRef = 39D749441AE59E46000ECB87 /* WinPopup.m */; };
+		39D749481AE5A039000ECB87 /* LevelType.m in Sources */ = {isa = PBXBuildFile; fileRef = 39D749471AE5A039000ECB87 /* LevelType.m */; };
 		5B12100C19748281004C1E1D /* BridgeKitV3.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B12100B19748281004C1E1D /* BridgeKitV3.framework */; };
 		5B121029197484DA004C1E1D /* BridgeKitV3.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B12100B19748281004C1E1D /* BridgeKitV3.framework */; };
 		5B12102A197484DD004C1E1D /* ElephantGameActivity.java in Sources */ = {isa = PBXBuildFile; fileRef = 5B12101B19748413004C1E1D /* ElephantGameActivity.java */; };
@@ -161,6 +163,10 @@
 		391256B81A9B049400EFBB5C /* Feather.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Feather.m; path = Source/Feather.m; sourceTree = "<group>"; };
 		39A0BA671AA68D110064E922 /* Elephant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Elephant.h; sourceTree = "<group>"; };
 		39A0BA681AA68D110064E922 /* Elephant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Elephant.m; sourceTree = "<group>"; };
+		39D749431AE59E46000ECB87 /* WinPopup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WinPopup.h; path = Source/WinPopup.h; sourceTree = "<group>"; };
+		39D749441AE59E46000ECB87 /* WinPopup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WinPopup.m; path = Source/WinPopup.m; sourceTree = "<group>"; };
+		39D749461AE5A039000ECB87 /* LevelType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LevelType.h; path = Source/LevelType.h; sourceTree = "<group>"; };
+		39D749471AE5A039000ECB87 /* LevelType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LevelType.m; path = Source/LevelType.m; sourceTree = "<group>"; };
 		5B12100919748273004C1E1D /* libEGL.so */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libEGL.so; path = /usr/lib/armv7a/libEGL.so; sourceTree = SDKROOT; };
 		5B12100B19748281004C1E1D /* BridgeKitV3.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BridgeKitV3.framework; path = System/Library/Frameworks/BridgeKitV3.framework; sourceTree = SDKROOT; };
 		5B12100F197483EE004C1E1D /* ic_launcher.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_launcher.png; sourceTree = "<group>"; };
@@ -458,6 +464,8 @@
 				D352B48019EC608A00829775 /* MetalShaders */,
 				E887AFC71A1CB11E0075CBAD /* Level.h */,
 				E887AFC81A1CB11E0075CBAD /* Level.m */,
+				39D749461AE5A039000ECB87 /* LevelType.h */,
+				39D749471AE5A039000ECB87 /* LevelType.m */,
 			);
 			name = Source;
 			sourceTree = "<group>";
@@ -486,6 +494,8 @@
 		B77F1B2517B978D7009739AE = {
 			isa = PBXGroup;
 			children = (
+				39D749431AE59E46000ECB87 /* WinPopup.h */,
+				39D749441AE59E46000ECB87 /* WinPopup.m */,
 				391256B71A9B049400EFBB5C /* Feather.h */,
 				391256B81A9B049400EFBB5C /* Feather.m */,
 				39A0BA671AA68D110064E922 /* Elephant.h */,
@@ -860,11 +870,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				39D749481AE5A039000ECB87 /* LevelType.m in Sources */,
 				B73789871807631A0076A88C /* main.m in Sources */,
 				7A046D8C19E8A20E004C4763 /* MainScene.m in Sources */,
 				E887AFC91A1CB11E0075CBAD /* Level.m in Sources */,
 				391256B91A9B049400EFBB5C /* Feather.m in Sources */,
 				39A0BA691AA68D110064E922 /* Elephant.m in Sources */,
+				39D749451AE59E46000ECB87 /* WinPopup.m in Sources */,
 				5B121038197487F2004C1E1D /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

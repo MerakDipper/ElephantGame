@@ -8,11 +8,18 @@
 
 #import "Level.h"
 #import "Feather.h"
+#import "WinPopup.h"
+#import "LevelType.h"
 //#import "Elephant.h"
+
+static NSString *const kFirstLevel = @"Levels/Level1";
+static NSString *selectedLevel = @"Levels/Level1";
+static const float MIN_SPEED=1.f;
 
 @implementation Level {
     Feather* feather;
     CCNode* ground;
+    CCNode* background;
     CCButton *restartButton;
     CCButton *winButton;
     CCNode* peanut;
@@ -26,6 +33,7 @@
     //CCScene *levels;
     //CCSprite* star;
     CCLabelTTF *_scoreLabel;
+    LevelType *_loadedLevel;
     int _score;
 
 }
@@ -51,10 +59,24 @@
     _physicsNode.collisionDelegate =self;
     [_physicsNode addChild:feather];
     //springLink = [CCPhysicsJoint connectedSpringJointWithBodyA:feather.physicsBody bodyB:elephant.physicsBody anchorA:ccp(0, 0) anchorB:ccp(30, 30) restLength:150.f stiffness:500.f damping:40.f];
-    CCScene *levels = [CCBReader loadAsScene:@"Levels/Level1"];
-    [levelNode addChild:levels];
+    //CCScene *levels = [CCBReader loadAsScene:@"Levels/Level1"];
+    _loadedLevel= (LevelType *)[CCBReader load: selectedLevel owner:self];
+    [levelNode addChild:_loadedLevel];
     
     
+}
+
+-(void)loadNextLevel {
+    selectedLevel = _loadedLevel.nextLevelName;
+    CCScene *nextScene = nil;
+    if(selectedLevel) {
+        nextScene = [CCBReader loadAsScene:@"Level"];
+    }else {
+        selectedLevel = kFirstLevel;
+        nextScene = [CCBReader loadAsScene:@"MainScene"];
+    }
+    CCTransition *transition = [CCTransition transitionFadeWithDuration:0.8f];
+    [[CCDirector sharedDirector] presentScene:nextScene withTransition:transition];
 }
 
 -(void)launchPeanut:(id)sender
@@ -144,9 +166,13 @@
 
 - (void)gameWin {
     _gameOver = TRUE;
-    winButton.visible = TRUE;
+    //winButton.visible = TRUE;
     feather.physicsBody = nil;
     //[[CCDirector sharedDirector] pause];
+    WinPopup *popup = (WinPopup *)[CCBReader load:@"WinPopup" owner:self];
+    popup.positionType = CCPositionTypeNormalized;
+    popup.position=ccp(0.3,0.5);
+    [self addChild:popup];
 }
     
 
@@ -173,6 +199,12 @@
         //NSLog(@"Update:%g, %g",feather.position.x,self.boundingBox.size.width);
         [self gameWin];
         return;
+        //ground.position = ccp(ground.position.x + ground.contentSize.width, ground.position.y);
+        
+    }
+    if((feather.position.x-self.boundingBox.origin.x>200)&&(ccpLength(feather.physicsBody.velocity)<MIN_SPEED)) {
+        [self gameOver];
+        return;
     }
 //    if(!_gameOver) {
 //        @try {
@@ -182,6 +214,14 @@
 //        {
 //            
 //        }
+//    }
+    
+    //loop the backgrounf
+    //get the world
+//    CGPoint groundWorldPosition = [_physicsNode convertToWorldSpace:ground.position];
+//    CGPoint groundScreenPosition = [self convertToNodeSpace:groundWorldPosition];
+//    if (groundScreenPosition.x <= (-1 * ground.contentSize.width)) {
+//        ground.position = ccp(ground.position.x + 2 * ground.contentSize.width, ground.position.y);
 //    }
 }
 

@@ -1,0 +1,15 @@
+For FlyingFeather Game
+
+This week
+
+Polished MainScreen
+Effects like transitionFadeWithDuration
+More interface functionality (Make levels continuously)
+New feather water drop sprite
+
+Next week
+Manage how to make the heavier effect last for certain while
+More levels
+Add more feathers if possible (like make the length of the layer longer)
+Start to documenting the assets information and copyrights
+

@@ -150,7 +150,7 @@ PageOffset(NSUInteger firstVertex, NSUInteger vertexCount)
 	// Need to record the first vertex or element index before pushing more vertexes.
 	NSUInteger firstVertex = _buffers->_vertexBuffer->_count;
 	NSUInteger firstIndex = _buffers->_indexBuffer->_count;
-	
+    
 	// Value is 0 unless there a page boundary overlap would occur.
 	NSUInteger vertexPageOffset = PageOffset(firstVertex, vertexCount);
 	

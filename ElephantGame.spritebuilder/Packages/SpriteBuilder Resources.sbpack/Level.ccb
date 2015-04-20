@@ -58,7 +58,7 @@
 						<key>displayName</key>
 						<string>background</string>
 						<key>memberVarAssignmentName</key>
-						<string></string>
+						<string>background</string>
 						<key>memberVarAssignmentType</key>
 						<integer>1</integer>
 						<key>properties</key>
@@ -103,8 +103,8 @@
 								<string>ScaleLock</string>
 								<key>value</key>
 								<array>
-									<real>3.1500000953674316</real>
-									<real>3.1500000953674316</real>
+									<real>2.6456055641174316</real>
+									<real>2.6456055641174316</real>
 									<true/>
 									<integer>0</integer>
 								</array>
@@ -867,8 +867,8 @@
 										<string>ScaleLock</string>
 										<key>value</key>
 										<array>
-											<real>2.9326679706573486</real>
-											<real>2.9326679706573486</real>
+											<real>2.9375908374786377</real>
+											<real>2.9375908374786377</real>
 											<true/>
 											<integer>0</integer>
 										</array>
@@ -917,6 +917,8 @@
 										<array/>
 									</dict>
 								</array>
+								<key>selected</key>
+								<true/>
 							</dict>
 							<dict>
 								<key>UUID</key>
@@ -1191,8 +1193,8 @@
 						<string>Position</string>
 						<key>value</key>
 						<array>
-							<real>55</real>
-							<real>162</real>
+							<real>100</real>
+							<real>159.3099365234375</real>
 							<integer>0</integer>
 							<integer>0</integer>
 							<integer>0</integer>
@@ -1216,7 +1218,7 @@
 						<string>ScaleLock</string>
 						<key>value</key>
 						<array>
-							<real>2.7364587783813477</real>
+							<real>5</real>
 							<real>8.0345029830932617</real>
 							<false/>
 							<integer>0</integer>
@@ -1517,8 +1519,8 @@
 						<string>Position</string>
 						<key>value</key>
 						<array>
-							<real>518</real>
-							<real>161.00001525878906</real>
+							<real>473</real>
+							<real>159.79621887207031</real>
 							<integer>0</integer>
 							<integer>0</integer>
 							<integer>0</integer>
@@ -1542,7 +1544,7 @@
 						<string>ScaleLock</string>
 						<key>value</key>
 						<array>
-							<real>2.632260799407959</real>
+							<real>5</real>
 							<real>-8.0101890563964844</real>
 							<false/>
 							<integer>0</integer>
@@ -1821,8 +1823,6 @@
 						</array>
 					</dict>
 				</array>
-				<key>selected</key>
-				<true/>
 			</dict>
 			<dict>
 				<key>UUID</key>
