@@ -124,6 +124,12 @@ static const float MIN_SPEED=1.f;
     return NO;
 }
 
+-(BOOL)ccPhysicsCollisionBegin:(CCPhysicsCollisionPair*)pair feather:(CCSprite*)feather waterdrop:(CCSprite*)waterdrop {
+    CCLOG(@"waterdrop");
+    feather.physicsBody.density = 0.08;
+    return NO;
+}
+
 -(BOOL)ccPhysicsCollisionBegin:(CCPhysicsCollisionPair*)pair peanutc:(CCNode*)peanut feather:(CCSprite*)feather {
     CCLOG(@"CollisionBulletfeather");
     //peanut.physicsBody=nil;
@@ -171,7 +177,7 @@ static const float MIN_SPEED=1.f;
     //[[CCDirector sharedDirector] pause];
     WinPopup *popup = (WinPopup *)[CCBReader load:@"WinPopup" owner:self];
     popup.positionType = CCPositionTypeNormalized;
-    popup.position=ccp(0.3,0.5);
+    popup.position=ccp(0.38,0.5);
     [self addChild:popup];
 }
     
