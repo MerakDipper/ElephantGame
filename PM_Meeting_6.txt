@@ -1,0 +1,23 @@
+For Color Pouring Game
+Tasks finished this week:
+1) Added new levels to 10 levels in total
+2) Further tuned the RGB values of the colors to distinguish them
+3) Changed the game strategy (if one color is already corresponding to the target color, then it will not be mixed again)
+
+
+Task to be finish next week:
+1) Design the social elements of the game
+2) Add a Facebook sharing button
+
+For Flyting Feather
+
+Tasks finished this week:
+1) New feature added: the raining cloud
+2) New level added
+3) UI enhanced
+
+
+
+Task to be finish next week:
+1) Add a Facebook sharing button
+2) Documents
