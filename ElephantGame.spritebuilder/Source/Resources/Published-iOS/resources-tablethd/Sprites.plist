@@ -4,10 +4,23 @@
 <dict>
 	<key>frames</key>
 	<dict>
+		<key>Sprites/1357064.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{1, 1}, {2480, 2480}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>rotated</key>
+			<false/>
+			<key>sourceColorRect</key>
+			<string>{{0, 0}, {2480, 2480}}</string>
+			<key>sourceSize</key>
+			<string>{2480, 2480}</string>
+		</dict>
 		<key>Sprites/Blue-Feather-Sprite.png</key>
 		<dict>
 			<key>frame</key>
-			<string>{{2512, 1}, {201, 250}}</string>
+			<string>{{637, 2483}, {201, 250}}</string>
 			<key>offset</key>
 			<string>{0, 0}</string>
 			<key>rotated</key>
@@ -20,7 +33,7 @@
 		<key>Sprites/Cloud-8@4x.png</key>
 		<dict>
 			<key>frame</key>
-			<string>{{1876, 751}, {672, 188}}</string>
+			<string>{{1, 3233}, {672, 188}}</string>
 			<key>offset</key>
 			<string>{0, 0}</string>
 			<key>rotated</key>
@@ -30,23 +43,10 @@
 			<key>sourceSize</key>
 			<string>{672, 188}</string>
 		</dict>
-		<key>Sprites/clipart-star-RTA9RqzTL.png</key>
-		<dict>
-			<key>frame</key>
-			<string>{{1, 1}, {1969, 1873}}</string>
-			<key>offset</key>
-			<string>{0, 0}</string>
-			<key>rotated</key>
-			<true/>
-			<key>sourceColorRect</key>
-			<string>{{0, 0}, {1969, 1873}}</string>
-			<key>sourceSize</key>
-			<string>{1969, 1873}</string>
-		</dict>
 		<key>Sprites/cloudlarge-sprite-ipad@4x.png</key>
 		<dict>
 			<key>frame</key>
-			<string>{{1876, 1}, {748, 316}}</string>
+			<string>{{1, 2483}, {748, 316}}</string>
 			<key>offset</key>
 			<string>{0, 0}</string>
 			<key>rotated</key>
@@ -59,7 +59,7 @@
 		<key>Sprites/cloudsmall-sprite-iPad@4x.png</key>
 		<dict>
 			<key>frame</key>
-			<string>{{2194, 1}, {434, 316}}</string>
+			<string>{{319, 2483}, {434, 316}}</string>
 			<key>offset</key>
 			<string>{0, 0}</string>
 			<key>rotated</key>
@@ -72,7 +72,7 @@
 		<key>Sprites/feather.png</key>
 		<dict>
 			<key>frame</key>
-			<string>{{2194, 437}, {400, 296}}</string>
+			<string>{{319, 2919}, {400, 296}}</string>
 			<key>offset</key>
 			<string>{0, 0}</string>
 			<key>rotated</key>
@@ -85,7 +85,7 @@
 		<key>Sprites/olifant.png</key>
 		<dict>
 			<key>frame</key>
-			<string>{{1876, 1425}, {500, 357}}</string>
+			<string>{{191, 3233}, {500, 357}}</string>
 			<key>offset</key>
 			<string>{0, 0}</string>
 			<key>rotated</key>
@@ -98,7 +98,7 @@
 		<key>Sprites/peanut.png</key>
 		<dict>
 			<key>frame</key>
-			<string>{{1876, 1927}, {240, 88}}</string>
+			<string>{{1, 3907}, {240, 88}}</string>
 			<key>offset</key>
 			<string>{0, 0}</string>
 			<key>rotated</key>
@@ -111,11 +111,11 @@
 		<key>Sprites/slurf.png</key>
 		<dict>
 			<key>frame</key>
-			<string>{{2066, 751}, {500, 357}}</string>
+			<string>{{243, 3735}, {500, 357}}</string>
 			<key>offset</key>
 			<string>{0, 0}</string>
 			<key>rotated</key>
-			<true/>
+			<false/>
 			<key>sourceColorRect</key>
 			<string>{{0, 0}, {500, 357}}</string>
 			<key>sourceSize</key>
@@ -124,7 +124,7 @@
 		<key>Sprites/star.png</key>
 		<dict>
 			<key>frame</key>
-			<string>{{1, 1972}, {70, 70}}</string>
+			<string>{{1, 3997}, {70, 70}}</string>
 			<key>offset</key>
 			<string>{0, 0}</string>
 			<key>rotated</key>
@@ -140,7 +140,7 @@
 		<key>format</key>
 		<integer>2</integer>
 		<key>size</key>
-		<string>{4096, 2048}</string>
+		<string>{8192, 4096}</string>
 		<key>textureFileName</key>
 		<string>Sprites.png</string>
 	</dict>
