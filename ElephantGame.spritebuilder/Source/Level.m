@@ -25,21 +25,25 @@ static const float MIN_SPEED=1.f;
     CCNode* peanut;
     CCButton *touchEle;
     BOOL _gameOver;
+    BOOL _isWet;
     CCAction *followFeather;
     CCNode *contentNode;
     CCNode *elephant;
     CCButton *moveButton;
+    CCButton *backButton;
     CCNode *levelNode;
     //CCScene *levels;
     //CCSprite* star;
     CCLabelTTF *_scoreLabel;
     LevelType *_loadedLevel;
     int _score;
+    CCParticleSystemBase *windeffect;
 
 }
 
 
 - (void) onEnter {
+    _isWet=false;
     [super onEnter];
     restartButton.visible = FALSE;
     feather.physicsBody.collisionType = @"feather";
@@ -58,6 +62,8 @@ static const float MIN_SPEED=1.f;
     //elephant = (Elephant*)[CCBReader load:@"Elephant"];
     _physicsNode.collisionDelegate =self;
     [_physicsNode addChild:feather];
+    
+    
     //springLink = [CCPhysicsJoint connectedSpringJointWithBodyA:feather.physicsBody bodyB:elephant.physicsBody anchorA:ccp(0, 0) anchorB:ccp(30, 30) restLength:150.f stiffness:500.f damping:40.f];
     //CCScene *levels = [CCBReader loadAsScene:@"Levels/Level1"];
     _loadedLevel= (LevelType *)[CCBReader load: selectedLevel owner:self];
@@ -103,9 +109,9 @@ static const float MIN_SPEED=1.f;
         [_physicsNode addChild:peanut];
         
         // Make and impulse and apply it
-        CGPoint force = ccpMult(directionVector, 350000);
-        [peanut.physicsBody applyForce:force];
-    
+        CGPoint force = ccpMult(directionVector, 3500);
+        [peanut.physicsBody applyImpulse:force];
+    [windeffect resetSystem];
     
     
     
@@ -126,7 +132,7 @@ static const float MIN_SPEED=1.f;
 
 -(BOOL)ccPhysicsCollisionBegin:(CCPhysicsCollisionPair*)pair feather:(CCSprite*)feather waterdrop:(CCSprite*)waterdrop {
     CCLOG(@"waterdrop");
-    feather.physicsBody.density = 0.08;
+    _isWet=true;
     return NO;
 }
 
@@ -189,16 +195,31 @@ static const float MIN_SPEED=1.f;
 
 -(void)moveElephantForward {
     NSLog(@"touched ground2");
-    CCActionMoveBy* moveForward = [CCActionMoveBy actionWithDuration:0.3f position:ccp(50.0f, 0.0f)];
+    CCActionMoveBy* moveForward = [CCActionMoveBy actionWithDuration:0.3f position:ccp(40.0f, 0.0f)];
     [elephant runAction:moveForward];
 }
+
+-(void)moveElephantBackward {
+    NSLog(@"touched groundb");
+    CCActionMoveBy* moveForward = [CCActionMoveBy actionWithDuration:0.3f position:ccp(-40.0f, 0.0f)];
+    [elephant runAction:moveForward];
+}
+
 
 -(void)move {
     [self moveElephantForward];
     NSLog(@"touched ground1");
 }
 
+-(void)back {
+    [self moveElephantBackward];
+    NSLog(@"touched groundb");
+}
+
+
 - (void)update:(CCTime)delta {
+    //feather.physicsBody.affectedByGravity = YES;
+    [feather.physicsBody applyForce:ccp(0.f,3.f)];
     if ((feather.position.x-self.boundingBox.origin.x > self.boundingBox.size.width)) //||
         //(feather.position.y-self.boundingBox.origin.y > self.boundingBox.size.height))
     {
@@ -211,6 +232,10 @@ static const float MIN_SPEED=1.f;
     if((feather.position.x-self.boundingBox.origin.x>200)&&(ccpLength(feather.physicsBody.velocity)<MIN_SPEED)) {
         [self gameOver];
         return;
+    }
+    
+    if(_isWet) {
+        [feather.physicsBody applyForce:ccp(0.f,-6.f)];
     }
 //    if(!_gameOver) {
 //        @try {
