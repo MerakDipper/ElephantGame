@@ -10,6 +10,8 @@
 	<string>ElephantGame</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
+		<key>7206B7B43CE56F82601646E7E0F234B4FF2FB00D</key>
+		<string>https://github.com/mrdavenz/DVNotifications.git</string>
 		<key>E5D1049172FC0D43140364277CA2B453063C5F66</key>
 		<string>https://github.com/MerakDipper/ElephantGame.git</string>
 	</dict>
@@ -17,6 +19,8 @@
 	<string>ElephantGame.spritebuilder/ElephantGame.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
+		<key>7206B7B43CE56F82601646E7E0F234B4FF2FB00D</key>
+		<string>../../../../DVNotifications</string>
 		<key>E5D1049172FC0D43140364277CA2B453063C5F66</key>
 		<string>../../..</string>
 	</dict>
@@ -28,6 +32,14 @@
 	<string>E5D1049172FC0D43140364277CA2B453063C5F66</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>7206B7B43CE56F82601646E7E0F234B4FF2FB00D</string>
+			<key>IDESourceControlWCCName</key>
+			<string>DVNotifications</string>
+		</dict>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>

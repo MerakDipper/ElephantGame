@@ -1,25 +1,27 @@
 //
-//  Feather.m
+//  LevelTutorial.m
 //  ElephantGame
 //
-//  Created by 张璇 on 15/2/20.
+//  Created by 张璇 on 15/5/1.
 //  Copyright (c) 2015年 Apportable. All rights reserved.
 //
 
-#import "Level.h"
+
+#import "LevelTutorial.h"
 #import "Feather.h"
 #import "WinPopup.h"
 #import "LevelType.h"
 //#import "Elephant.h"
 #import "DVNotification.h"
 
-static NSString *const kFirstLevel = @"Levels/Level1";
-static NSString *selectedLevel = @"Levels/Level1";
+static NSString *const kFirstLevel = @"Level1Tutorial";
+static NSString *selectedLevel = @"Level1Tutorial";
 static const float MIN_SPEED=1.f;
 static int _levelcount = 1;
 static BOOL tutoNotiCount = 0;
+static int hitgNotiCount = 0;
 
-@implementation Level {
+@implementation LevelTutorial {
     Feather* feather;
     CCNode* ground;
     CCNode* background;
@@ -41,8 +43,9 @@ static BOOL tutoNotiCount = 0;
     LevelType *_loadedLevel;
     int _score;
     CCParticleSystemBase *windeffect;
+    BOOL _blowAchieved;
     
-
+    
 }
 
 
@@ -78,8 +81,8 @@ static BOOL tutoNotiCount = 0;
     if (_levelcount==1) {
         tutoNotiCount++;
         if (tutoNotiCount==1) {
-        //[DVNotification setNotificationBackgroundColour: [UIColor greenColor]];
-        //[DVNotification showNotificationWithText: @"Tap right half of ground to move forward.\nTap left half of ground to move backward\nTap anywhere else to blow the feather!"];
+            [DVNotification setNotificationBackgroundColour: [UIColor greenColor]];
+            [DVNotification showNotificationWithText: @"Tap right half of ground to move forward.\nTap left half of ground to move backward\nTap anywhere else to blow the feather!"];
         }
         
     }
@@ -91,7 +94,7 @@ static BOOL tutoNotiCount = 0;
     selectedLevel = _loadedLevel.nextLevelName;
     CCScene *nextScene = nil;
     if(selectedLevel) {
-        nextScene = [CCBReader loadAsScene:@"Level"];
+        nextScene = [CCBReader loadAsScene:@"LevelTutorial"];
     }else {
         selectedLevel = kFirstLevel;
         nextScene = [CCBReader loadAsScene:@"MainScene"];
@@ -111,23 +114,23 @@ static BOOL tutoNotiCount = 0;
     CGPoint directionVector = ccp(sinf(rotationRadians), cosf(rotationRadians));
     CGPoint peanutOffset = ccpMult(directionVector, 30);
     
-        // Load peanut and set it's initial position
-        peanut = [CCBReader load:@"Peanut"];
-        peanut.physicsBody.collisionType=@"peanutc";
+    // Load peanut and set it's initial position
+    peanut = [CCBReader load:@"Peanut"];
+    peanut.physicsBody.collisionType=@"peanutc";
     
-        CGPoint spawnPosition = elephant.position;
-        //CGPoint spawnPosition = _launcher1.position;
-        spawnPosition.x = spawnPosition.x+150;
-        spawnPosition.y = spawnPosition.y+100;
-        peanut.position = ccpAdd(spawnPosition, peanutOffset);
-        peanut.rotation = _launcher.rotation-50;
-        peanut.scale = 0.5;
-        
-        [_physicsNode addChild:peanut];
-        
-        // Make and impulse and apply it
-        CGPoint force = ccpMult(directionVector, 3500);
-        [peanut.physicsBody applyImpulse:force];
+    CGPoint spawnPosition = elephant.position;
+    //CGPoint spawnPosition = _launcher1.position;
+    spawnPosition.x = spawnPosition.x+150;
+    spawnPosition.y = spawnPosition.y+100;
+    peanut.position = ccpAdd(spawnPosition, peanutOffset);
+    peanut.rotation = _launcher.rotation-50;
+    peanut.scale = 0.5;
+    
+    [_physicsNode addChild:peanut];
+    
+    // Make and impulse and apply it
+    CGPoint force = ccpMult(directionVector, 3500);
+    [peanut.physicsBody applyImpulse:force];
     [windeffect resetSystem];
     
     
@@ -135,17 +138,17 @@ static BOOL tutoNotiCount = 0;
 }
 -(BOOL)ccPhysicsCollisionBegin:(CCPhysicsCollisionPair*)pair feather:(CCSprite*)feather ground:(CCNode*)ground {
     //NSLog(@"Collision");
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        [DVNotification setNotificationBackgroundColour: [UIColor redColor]];
+        [DVNotification showNotificationWithText: @"Hit Ground and Fail!"];
+    });
     [self gameOver];
     return TRUE;
 }
 
 -(BOOL)ccPhysicsCollisionBegin:(CCPhysicsCollisionPair*)pair feather:(CCSprite*)feather star:(CCSprite*)star {
     CCLOG(@"star");
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        [DVNotification setNotificationBackgroundColour: [UIColor greenColor]];
-        [DVNotification showNotificationWithText: @"Stars! Nice catch!"];
-    });
     [star removeFromParent];
     _score++;
     _scoreLabel.string = [NSString stringWithFormat:@"%d", _score];
@@ -154,17 +157,15 @@ static BOOL tutoNotiCount = 0;
 
 -(BOOL)ccPhysicsCollisionBegin:(CCPhysicsCollisionPair*)pair feather:(CCSprite*)feather waterdrop:(CCSprite*)waterdrop {
     CCLOG(@"waterdrop");
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        [DVNotification setNotificationBackgroundColour: [UIColor redColor]];
-        [DVNotification showNotificationWithText: @"Caught in rain and get heavier!"];
-    });
+
+
     _isWet=TRUE;
     return NO;
 }
 
 -(BOOL)ccPhysicsCollisionBegin:(CCPhysicsCollisionPair*)pair peanutc:(CCNode*)peanut feather:(CCSprite*)feather {
     CCLOG(@"CollisionBulletfeather");
+    _blowAchieved = TRUE;
     //peanut.physicsBody=nil;
     [peanut removeFromParent];
     return TRUE;
@@ -200,18 +201,14 @@ static BOOL tutoNotiCount = 0;
     CCActionMoveTo *actionMoveTo = [CCActionMoveTo actionWithDuration:1.f position:ccp(0,0)];
     [contentNode runAction:actionMoveTo];
     feather.physicsBody = nil;
-
+    
     //[[CCDirector sharedDirector] pause];
 }
 
 - (void)gameOverForCloud {
     //CCLOG(@"%f",feather.position.y);
-    //[DVNotification showNotificationWithText: @"Blocked by cloud and fail!"];
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        [DVNotification setNotificationBackgroundColour: [UIColor redColor]];
-        [DVNotification showNotificationWithText: @"Blocked by the cloud and fail!"];
-    });
+    [DVNotification showNotificationWithText: @"Blocked by cloud and fail!"];
+    
     _gameOver = TRUE;
     restartButton.visible = TRUE;
     //[contentNode stopAction:followFeather];
@@ -237,10 +234,10 @@ static BOOL tutoNotiCount = 0;
     popup.position=ccp(0.38,0.5);
     [self addChild:popup];
 }
-    
+
 
 - (void)restart {
-    CCScene *scene = [CCBReader loadAsScene:@"Level"];
+    CCScene *scene = [CCBReader loadAsScene:@"LevelTutorial"];
     [[CCDirector sharedDirector] replaceScene:scene];
 }
 
@@ -272,7 +269,7 @@ static BOOL tutoNotiCount = 0;
     //feather.physicsBody.affectedByGravity = YES;
     [feather.physicsBody applyForce:ccp(0.f,3.f)];
     if ((feather.position.x-self.boundingBox.origin.x > self.boundingBox.size.width)) //||
-        //(feather.position.y-self.boundingBox.origin.y > self.boundingBox.size.height))
+    //(feather.position.y-self.boundingBox.origin.y > self.boundingBox.size.height))
     {
         //NSLog(@"Update:%g, %g",feather.position.x,self.boundingBox.size.width);
         [self gameWin];
@@ -289,23 +286,33 @@ static BOOL tutoNotiCount = 0;
     if(_isWet) {
         [feather.physicsBody applyForce:ccp(0.f,-6.f)];
     }
-//    if(!_gameOver) {
-//        @try {
-//            [super update:delta];
-//        }
-//        @catch(NSException* ex)
-//        {
-//            
-//        }
-//    }
+    
+    if(_blowAchieved) {
+        static dispatch_once_t onceToken;
+        dispatch_once(&onceToken, ^{
+            [DVNotification setNotificationBackgroundColour: [UIColor greenColor]];
+            [DVNotification showNotificationWithText: @"You have successfully pushed the feather! Good Job!\nNow push the feather to right edge of screen to pass the level!"];
+        });
+        
+        
+    }
+    //    if(!_gameOver) {
+    //        @try {
+    //            [super update:delta];
+    //        }
+    //        @catch(NSException* ex)
+    //        {
+    //
+    //        }
+    //    }
     
     //loop the backgrounf
     //get the world
-//    CGPoint groundWorldPosition = [_physicsNode convertToWorldSpace:ground.position];
-//    CGPoint groundScreenPosition = [self convertToNodeSpace:groundWorldPosition];
-//    if (groundScreenPosition.x <= (-1 * ground.contentSize.width)) {
-//        ground.position = ccp(ground.position.x + 2 * ground.contentSize.width, ground.position.y);
-//    }
+    //    CGPoint groundWorldPosition = [_physicsNode convertToWorldSpace:ground.position];
+    //    CGPoint groundScreenPosition = [self convertToNodeSpace:groundWorldPosition];
+    //    if (groundScreenPosition.x <= (-1 * ground.contentSize.width)) {
+    //        ground.position = ccp(ground.position.x + 2 * ground.contentSize.width, ground.position.y);
+    //    }
 }
 
 @end

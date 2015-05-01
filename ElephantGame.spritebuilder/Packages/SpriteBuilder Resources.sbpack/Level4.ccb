@@ -257,7 +257,7 @@
 						<string>Position</string>
 						<key>value</key>
 						<array>
-							<real>353.5</real>
+							<real>401.5</real>
 							<real>140.75</real>
 							<integer>0</integer>
 							<integer>0</integer>
@@ -286,6 +286,8 @@
 						<string>Cloud.ccb</string>
 					</dict>
 				</array>
+				<key>selected</key>
+				<true/>
 			</dict>
 		</array>
 		<key>customClass</key>
@@ -371,8 +373,6 @@
 				</array>
 			</dict>
 		</array>
-		<key>selected</key>
-		<true/>
 	</dict>
 	<key>notes</key>
 	<array/>

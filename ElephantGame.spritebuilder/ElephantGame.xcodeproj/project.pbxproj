@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		391256B91A9B049400EFBB5C /* Feather.m in Sources */ = {isa = PBXBuildFile; fileRef = 391256B81A9B049400EFBB5C /* Feather.m */; };
 		39A0BA691AA68D110064E922 /* Elephant.m in Sources */ = {isa = PBXBuildFile; fileRef = 39A0BA681AA68D110064E922 /* Elephant.m */; };
+		39AF194C1AF34B1200E36215 /* DVNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = 39AF194A1AF34B1200E36215 /* DVNotification.m */; };
+		39AF194D1AF34B1200E36215 /* DVNotification.xib in Resources */ = {isa = PBXBuildFile; fileRef = 39AF194B1AF34B1200E36215 /* DVNotification.xib */; };
+		39AF19561AF416F500E36215 /* LevelTutorial.m in Sources */ = {isa = PBXBuildFile; fileRef = 39AF19551AF416F500E36215 /* LevelTutorial.m */; };
 		39D749451AE59E46000ECB87 /* WinPopup.m in Sources */ = {isa = PBXBuildFile; fileRef = 39D749441AE59E46000ECB87 /* WinPopup.m */; };
 		39D749481AE5A039000ECB87 /* LevelType.m in Sources */ = {isa = PBXBuildFile; fileRef = 39D749471AE5A039000ECB87 /* LevelType.m */; };
 		5B12100C19748281004C1E1D /* BridgeKitV3.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B12100B19748281004C1E1D /* BridgeKitV3.framework */; };
@@ -163,6 +166,11 @@
 		391256B81A9B049400EFBB5C /* Feather.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Feather.m; path = Source/Feather.m; sourceTree = "<group>"; };
 		39A0BA671AA68D110064E922 /* Elephant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Elephant.h; sourceTree = "<group>"; };
 		39A0BA681AA68D110064E922 /* Elephant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Elephant.m; sourceTree = "<group>"; };
+		39AF19491AF34B1200E36215 /* DVNotification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DVNotification.h; path = ../../DVNotifications/DVNotifications/DVNotification.h; sourceTree = "<group>"; };
+		39AF194A1AF34B1200E36215 /* DVNotification.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DVNotification.m; path = ../../DVNotifications/DVNotifications/DVNotification.m; sourceTree = "<group>"; };
+		39AF194B1AF34B1200E36215 /* DVNotification.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DVNotification.xib; path = ../../DVNotifications/DVNotifications/DVNotification.xib; sourceTree = "<group>"; };
+		39AF19541AF416F500E36215 /* LevelTutorial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LevelTutorial.h; sourceTree = "<group>"; };
+		39AF19551AF416F500E36215 /* LevelTutorial.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LevelTutorial.m; sourceTree = "<group>"; };
 		39D749431AE59E46000ECB87 /* WinPopup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WinPopup.h; path = Source/WinPopup.h; sourceTree = "<group>"; };
 		39D749441AE59E46000ECB87 /* WinPopup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WinPopup.m; path = Source/WinPopup.m; sourceTree = "<group>"; };
 		39D749461AE5A039000ECB87 /* LevelType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LevelType.h; path = Source/LevelType.h; sourceTree = "<group>"; };
@@ -464,6 +472,8 @@
 				D352B48019EC608A00829775 /* MetalShaders */,
 				E887AFC71A1CB11E0075CBAD /* Level.h */,
 				E887AFC81A1CB11E0075CBAD /* Level.m */,
+				39AF19541AF416F500E36215 /* LevelTutorial.h */,
+				39AF19551AF416F500E36215 /* LevelTutorial.m */,
 				39D749461AE5A039000ECB87 /* LevelType.h */,
 				39D749471AE5A039000ECB87 /* LevelType.m */,
 			);
@@ -496,6 +506,9 @@
 			children = (
 				39D749431AE59E46000ECB87 /* WinPopup.h */,
 				39D749441AE59E46000ECB87 /* WinPopup.m */,
+				39AF19491AF34B1200E36215 /* DVNotification.h */,
+				39AF194A1AF34B1200E36215 /* DVNotification.m */,
+				39AF194B1AF34B1200E36215 /* DVNotification.xib */,
 				391256B71A9B049400EFBB5C /* Feather.h */,
 				391256B81A9B049400EFBB5C /* Feather.m */,
 				39A0BA671AA68D110064E922 /* Elephant.h */,
@@ -777,6 +790,7 @@
 				B7378978180762440076A88C /* Default@2x.png in Resources */,
 				B71F5914188484E7003F4D28 /* iPad@2x.png in Resources */,
 				B71F5913188484E7003F4D28 /* iPad.png in Resources */,
+				39AF194D1AF34B1200E36215 /* DVNotification.xib in Resources */,
 				B71F5912188484E7003F4D28 /* iPad-old@2x.png in Resources */,
 				B71F5916188484E7003F4D28 /* iPhone-old@2x.png in Resources */,
 				B737893B180761570076A88C /* Published-iOS in Resources */,
@@ -872,9 +886,11 @@
 			files = (
 				39D749481AE5A039000ECB87 /* LevelType.m in Sources */,
 				B73789871807631A0076A88C /* main.m in Sources */,
+				39AF19561AF416F500E36215 /* LevelTutorial.m in Sources */,
 				7A046D8C19E8A20E004C4763 /* MainScene.m in Sources */,
 				E887AFC91A1CB11E0075CBAD /* Level.m in Sources */,
 				391256B91A9B049400EFBB5C /* Feather.m in Sources */,
+				39AF194C1AF34B1200E36215 /* DVNotification.m in Sources */,
 				39A0BA691AA68D110064E922 /* Elephant.m in Sources */,
 				39D749451AE59E46000ECB87 /* WinPopup.m in Sources */,
 				5B121038197487F2004C1E1D /* AppDelegate.m in Sources */,
