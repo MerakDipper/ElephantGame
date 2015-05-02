@@ -1,4 +1,4 @@
-For FlyingFeather Game
+For FlyingFeather Game (Final Version)
 
 This week
 Change move buttons to move forward, backward
@@ -10,4 +10,12 @@ Wind particle effect added
 Next week
 Documenting things
 
+For Color Pouring Game (Final)
+Tasks finished this week:
 
+1) Add a Facebook sharing button
+2) Polish the game scene
+3) Add a tutorial to improve the on boarding experience
+
+Next week
+Documenting things
