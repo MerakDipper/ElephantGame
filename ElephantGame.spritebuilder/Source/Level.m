@@ -12,6 +12,9 @@
 #import "LevelType.h"
 //#import "Elephant.h"
 #import "DVNotification.h"
+#import <FBSDKCoreKit/FBSDKCoreKit.h>
+#import <FBSDKShareKit/FBSDKShareKit.h>
+#import <FBSDKLoginKit/FBSDKLoginKit.h>
 
 static NSString *const kFirstLevel = @"Levels/Level1";
 static NSString *selectedLevel = @"Levels/Level1";
@@ -242,6 +245,23 @@ static BOOL tutoNotiCount = 0;
 - (void)restart {
     CCScene *scene = [CCBReader loadAsScene:@"Level"];
     [[CCDirector sharedDirector] replaceScene:scene];
+}
+
+-(void) shareToFacebook {
+    FBSDKShareLinkContent *content = [[FBSDKShareLinkContent alloc] init];
+    
+    // this should link to FB page for your app or AppStore link if published
+    content.contentURL = [NSURL URLWithString:@"https://www.facebook.com/makeschool"];
+    // URL of image to be displayed alongside post
+    content.imageURL = [NSURL URLWithString:@"https://git.makeschool.com/MakeSchool-Tutorials/News/f744d331484d043a373ee2a33d63626c352255d4//663032db-cf16-441b-9103-c518947c70e1/cover_photo.jpeg"];
+    // title of post
+    content.contentTitle = [NSString stringWithFormat:@"My current level is %d!", _levelcount];
+    // description/body of post
+    content.contentDescription = @"Check out Flying Feather for more fun!";
+    
+    [FBSDKShareDialog showFromViewController:[CCDirector sharedDirector]
+                                 withContent:content
+                                    delegate:nil];
 }
 
 -(void)moveElephantForward {

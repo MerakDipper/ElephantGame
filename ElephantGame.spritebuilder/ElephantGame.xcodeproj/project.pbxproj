@@ -12,6 +12,9 @@
 		39AF194C1AF34B1200E36215 /* DVNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = 39AF194A1AF34B1200E36215 /* DVNotification.m */; };
 		39AF194D1AF34B1200E36215 /* DVNotification.xib in Resources */ = {isa = PBXBuildFile; fileRef = 39AF194B1AF34B1200E36215 /* DVNotification.xib */; };
 		39AF19561AF416F500E36215 /* LevelTutorial.m in Sources */ = {isa = PBXBuildFile; fileRef = 39AF19551AF416F500E36215 /* LevelTutorial.m */; };
+		39AF195A1AF44B2100E36215 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39AF19591AF44B2100E36215 /* FBSDKCoreKit.framework */; };
+		39AF195C1AF44C6B00E36215 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39AF195B1AF44C6B00E36215 /* FBSDKLoginKit.framework */; };
+		39AF195E1AF44C7100E36215 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39AF195D1AF44C7100E36215 /* FBSDKShareKit.framework */; };
 		39D749451AE59E46000ECB87 /* WinPopup.m in Sources */ = {isa = PBXBuildFile; fileRef = 39D749441AE59E46000ECB87 /* WinPopup.m */; };
 		39D749481AE5A039000ECB87 /* LevelType.m in Sources */ = {isa = PBXBuildFile; fileRef = 39D749471AE5A039000ECB87 /* LevelType.m */; };
 		5B12100C19748281004C1E1D /* BridgeKitV3.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B12100B19748281004C1E1D /* BridgeKitV3.framework */; };
@@ -171,6 +174,9 @@
 		39AF194B1AF34B1200E36215 /* DVNotification.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DVNotification.xib; path = ../../DVNotifications/DVNotifications/DVNotification.xib; sourceTree = "<group>"; };
 		39AF19541AF416F500E36215 /* LevelTutorial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LevelTutorial.h; sourceTree = "<group>"; };
 		39AF19551AF416F500E36215 /* LevelTutorial.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LevelTutorial.m; sourceTree = "<group>"; };
+		39AF19591AF44B2100E36215 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = ../../Documents/FacebookSDK/FBSDKCoreKit.framework; sourceTree = "<group>"; };
+		39AF195B1AF44C6B00E36215 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = ../../Documents/FacebookSDK/FBSDKLoginKit.framework; sourceTree = "<group>"; };
+		39AF195D1AF44C7100E36215 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKShareKit.framework; path = ../../Documents/FacebookSDK/FBSDKShareKit.framework; sourceTree = "<group>"; };
 		39D749431AE59E46000ECB87 /* WinPopup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WinPopup.h; path = Source/WinPopup.h; sourceTree = "<group>"; };
 		39D749441AE59E46000ECB87 /* WinPopup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WinPopup.m; path = Source/WinPopup.m; sourceTree = "<group>"; };
 		39D749461AE5A039000ECB87 /* LevelType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LevelType.h; path = Source/LevelType.h; sourceTree = "<group>"; };
@@ -286,13 +292,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				7A97911819E631CD001FFC4D /* libcocos2d.a in Frameworks */,
+				39AF195A1AF44B2100E36215 /* FBSDKCoreKit.framework in Frameworks */,
 				8392007A18EE8E3300B6C429 /* GLKit.framework in Frameworks */,
 				B77F1B3217B978D7009739AE /* QuartzCore.framework in Frameworks */,
 				B77F1B3417B978D7009739AE /* OpenGLES.framework in Frameworks */,
 				B77F1B3617B978D7009739AE /* OpenAL.framework in Frameworks */,
 				B77F1B3817B978D7009739AE /* AudioToolbox.framework in Frameworks */,
+				39AF195C1AF44C6B00E36215 /* FBSDKLoginKit.framework in Frameworks */,
 				B77F1B3A17B978D7009739AE /* AVFoundation.framework in Frameworks */,
 				B77F1B3C17B978D7009739AE /* UIKit.framework in Frameworks */,
+				39AF195E1AF44C7100E36215 /* FBSDKShareKit.framework in Frameworks */,
 				B77F1B3E17B978D7009739AE /* Foundation.framework in Frameworks */,
 				B77F1B4017B978D7009739AE /* CoreGraphics.framework in Frameworks */,
 				B77F1B4217B978D7009739AE /* CoreText.framework in Frameworks */,
@@ -536,6 +545,9 @@
 		B77F1B3017B978D7009739AE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				39AF195D1AF44C7100E36215 /* FBSDKShareKit.framework */,
+				39AF195B1AF44C6B00E36215 /* FBSDKLoginKit.framework */,
+				39AF19591AF44B2100E36215 /* FBSDKCoreKit.framework */,
 				7A59493C19E37FB200F65F90 /* libz.dylib */,
 				7A59493A19E37F9300F65F90 /* OpenGL.framework */,
 				7A4036F419DE3FA8007B6E8F /* AppKit.framework */,
@@ -1250,6 +1262,10 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/zhangxuan/Documents/FacebookSDK,
+				);
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Source/Prefix.pch;
@@ -1285,6 +1301,10 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/zhangxuan/Documents/FacebookSDK,
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Source/Prefix.pch;
 				HEADER_SEARCH_PATHS = (
