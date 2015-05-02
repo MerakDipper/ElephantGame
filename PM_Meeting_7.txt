@@ -1,0 +1,13 @@
+For FlyingFeather Game
+
+This week
+Change move buttons to move forward, backward
+Facebook sharing functionality added
+User on boarding level added
+Developed up to 10 levels
+Wind particle effect added
+
+Next week
+Documenting things
+
+
