@@ -94,6 +94,7 @@ static BOOL tutoNotiCount = 0;
     selectedLevel = _loadedLevel.nextLevelName;
     CCScene *nextScene = nil;
     if(selectedLevel) {
+        _levelcount ++;
         nextScene = [CCBReader loadAsScene:@"Level"];
     }else {
         selectedLevel = kFirstLevel;
@@ -231,7 +232,7 @@ static BOOL tutoNotiCount = 0;
 
 - (void)gameWin {
     _gameOver = TRUE;
-    _levelcount ++;
+    //_levelcount ++;
     //winButton.visible = TRUE;
     feather.physicsBody = nil;
     //[[CCDirector sharedDirector] pause];
